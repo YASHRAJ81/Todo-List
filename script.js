@@ -14,4 +14,25 @@ function addTask() {
     
 }
   inputBox.value = "";
+  saveData()
 }
+
+listContainer.addEventListener("click", function(e){
+  if(e.target.tagName === "LI"){ //this checks whether we have clicked on the li 
+    e.target.classList.toggle("checked"); //the toggle helps us to check or uncheck the added list
+    saveData()
+  }
+  else if(e.target.tagName === "SPAN"){ //this checks whether we have clicked on the span that is cross icon
+    e.target.parentElement.remove();
+    saveData()
+  }
+}, false);
+
+function saveData(){
+  localStorage.setItem("data", listContainer.innerHTML);
+}
+function showTask(){
+  listContainer.innerHTML = localStorage.getItem("data");
+}
+
+showTask()

@@ -67,9 +67,10 @@ ul li {
   list-style: none;
   font-size: 17px;
   padding: 12px 8px 12px 50px;
-  user-select: none;
+  user-select: none;/*  this error sigglings can be iggnored because its working */
   cursor: pointer;
   position: relative;
+  
 }
 
 ul li::before {
@@ -100,3 +101,21 @@ ul li.checked::before {
   background: linear-gradient(135deg, #153677, #4e085f);
   padding: 10px;
 }
+
+ul li span{
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+ul li span :hover{
+  background: #edeef0;
+}
+
